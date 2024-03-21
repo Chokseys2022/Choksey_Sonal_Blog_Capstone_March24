@@ -1,4 +1,4 @@
-const blogsData = [
+const blogData = [
     {
       title: "Exploring the Importance of Family Bonds",
       topic: "family",
@@ -34,5 +34,5 @@ const blogsData = [
     // Add more blog entries as needed
   ];
   
-  module.exports = blogsData;
+  module.exports = blogData;
   
