@@ -2,7 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import Blogs from "./models/blogSchema.mjs";
+import Blog from "./models/blogSchema.mjs";
 import blogData from "./utilities/data.js";
 
 //Configurations
@@ -27,13 +27,16 @@ app.use(express.urlencoded({ extended: true })); // parse URL-encoded bodies
 //Creating all routes
 
 //Seeding blog route
-app.get("seeds/blogData", async (req, res) => {
+// Seeding blog route
+app.get("/seeds/blogData", async (req, res) => {
   try {
-    await Blog.deleteMany({}); //delete existing blogs
-    await Blog.create(blogData); //create new blogss from seed data
+    console.log("Seeding blogs..."); // Log message indicating the seeding process has started
+    await Blog.deleteMany({}); // delete existing blogs
+    await Blog.create(blogData); // create new blogs from seed data
+    console.log("Blogs seeded successfully."); // Log message indicating the seeding process has completed
     res.send(`Blog Database Seeded`);
   } catch (error) {
-    throw console.error(error);
+    console.error("Error seeding blogs:", error);
     res.status(500).send("Error seeding blogs");
   }
 });
@@ -62,9 +65,11 @@ app.get("/blogData", async (req, res) => {
 });
 
 //UPDATE route
-app.put("/blogData", async (req, res) => {
+app.put("/blogData/:id", async (req, res) => {
   try {
-    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true }); // Update blog
+    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    }); // Update blog
     res.json(updatedBlog);
   } catch (err) {
     console.error(err);
@@ -73,7 +78,7 @@ app.put("/blogData", async (req, res) => {
 });
 
 //DELETE route
-app.delete("blogs/:id", async (req, res) => {
+app.delete("/blogs/:id", async (req, res) => {
   try {
     await Blog.findByIdAndDelete(req.params.id); //delete blog by id
 

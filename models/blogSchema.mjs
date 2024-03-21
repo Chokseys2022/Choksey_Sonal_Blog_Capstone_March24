@@ -6,7 +6,7 @@ const blogSchema = new mongoose.Schema({
   topic: {
     type: String,
     required: [true, "Topic is required"],
-    enum: ["family", "health/fitness", "reflection", "dance"],
+    enum: ["family", "fitness", "reflection", "dance"],
   },
   //blog title
   title: { type: String, required: [true, "Title is required"] },
@@ -16,10 +16,10 @@ const blogSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
 
   //add tags
-  tags: { type: String },
+  // tags: { type: String },
 });
 
-export default mongoose.model("blog", blogSchema);
+export default mongoose.model("Blog", blogSchema);
 
 // schemas:
 //_id

@@ -4,15 +4,15 @@ const blogData = [
       topic: "family",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor risus in mi volutpat consequat. Nulla facilisi. Integer pretium malesuada ante, eget ultricies nisi. Donec nec nibh tellus. Vestibulum rutrum enim ut erat eleifend, vitae convallis urna feugiat.",
       author: "John Doe",
-      tags: ["family", "reflection"],
+      // tags: ["family", "reflection"],
       date: new Date("2024-03-20"),
     },
     {
       title: "The Role of Exercise in Mental Health",
-      topic: "health/fitness",
+      topic: "fitness",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor risus in mi volutpat consequat. Nulla facilisi. Integer pretium malesuada ante, eget ultricies nisi. Donec nec nibh tellus. Vestibulum rutrum enim ut erat eleifend, vitae convallis urna feugiat.",
       author: "Jane Smith",
-      tags: ["health/fitness", "reflection"],
+      // tags: ["fitness", "reflection"],
       date: new Date("2024-03-18"),
     },
     {
@@ -20,7 +20,7 @@ const blogData = [
       topic: "dance",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor risus in mi volutpat consequat. Nulla facilisi. Integer pretium malesuada ante, eget ultricies nisi. Donec nec nibh tellus. Vestibulum rutrum enim ut erat eleifend, vitae convallis urna feugiat.",
       author: "Alice Johnson",
-      tags: ["dance", "reflection"],
+      // tags: ["dance", "reflection"],
       date: new Date("2024-03-15"),
     },
     {
@@ -28,10 +28,10 @@ const blogData = [
       topic: "reflection",
       content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor risus in mi volutpat consequat. Nulla facilisi. Integer pretium malesuada ante, eget ultricies nisi. Donec nec nibh tellus. Vestibulum rutrum enim ut erat eleifend, vitae convallis urna feugiat.",
       author: "Michael Williams",
-      tags: ["reflection", "mental and emotional health"],
+      // tags: ["reflection", "mental and emotional health"],
       date: new Date("2024-03-12"),
     },
-    // Add more blog entries as needed
+   
   ];
   
   module.exports = blogData;
